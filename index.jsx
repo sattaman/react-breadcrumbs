@@ -44,8 +44,8 @@ class Breadcrumbs extends React.Component {
   }
 
   _resolveRouteName(route){
-    let name = this._getDisplayName(route);
-    if(!name && route.breadcrumbName) name=route.breadcrumbName;
+    let name = route.breadcrumbName;
+    if(!name) name=this._getDisplayName(route)
     if(!name && route.name) name=route.name;
     return name;
   }
